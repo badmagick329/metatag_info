@@ -12,7 +12,7 @@ async function handleSubmit(e) {
   const url = cleanedURL(urlInput.value);
   try {
     submitButton.setAttribute("disabled", true);
-    const response = await fetch("http://192.168.1.116:8002/url", {
+    const response = await fetch("/url", {
       method: "POST",
       body: JSON.stringify({
         url,

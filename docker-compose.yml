@@ -1,0 +1,17 @@
+services:
+  fastapi:
+    build: 
+      context: ./backend
+    expose:
+      - "8000"
+
+  web:
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    ports:
+      - "9011:80"
+    volumes:
+      - ./frontend:/etc/nginx/html:rw
+      - ./nginx/conf.d:/etc/nginx/conf.d:rw
+      - ./nginx/logs:/var/logs:rw
