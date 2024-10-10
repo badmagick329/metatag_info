@@ -47,8 +47,15 @@ class MetaTagInfo:
         soup = bs(response.text, features="html.parser")
         metas = soup.find_all("meta")
         title = soup.find("title")
+        h1 = soup.find_all("h1")
+        h2 = soup.find_all("h2")
         if title:
             self.meta_tags.append(MetaTag(name="title", content=title.text))
+
+        if h1:
+            self.meta_tags.extend([MetaTag(name="h1", content=h.text) for h in h1])
+        if h2:
+            self.meta_tags.extend([MetaTag(name="h2", content=h.text) for h in h2])
 
         self.meta_tags.extend(
             [
