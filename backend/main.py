@@ -32,3 +32,13 @@ def parse_url(site_data: SiteData):
     except Exception as e:
         return {"error": str(e), "data": None}
     return {"error": None, "data": meta_info.to_markdown()}
+
+
+class HtmlPost(BaseModel):
+    html: str
+
+
+@app.post("/convert")
+def parse_html(html_post: HtmlPost):
+    print(f"html_post: {html_post}")
+    return {"error": None, "data": html_post.html}

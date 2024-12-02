@@ -1,0 +1,55 @@
+:root {
+  --input-width: 72rem;
+  --gap-1: 1rem;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0e0e0e;
+  color: white;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: var(--gap-1);
+  padding-top: 1rem;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.url-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.url-form > .html-input {
+  width: 100%;
+  max-width: var(--input-width);
+  padding: 0.5rem 0.25rem;
+}
+.url-form > .selected-tags-input {
+  width: 100%;
+  max-width: var(--input-width);
+  padding: 0.5rem 0.25rem;
+}
+.url-form > .output-text {
+  width: 100%;
+  max-width: var(--input-width);
+  padding: 0.5rem 0.25rem;
+}
+
+.url-form > .button-container {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-1);
+}
+
+.url-form > .button-container > .submit-button {
+  padding: 0.5rem 0.8rem;
+}
